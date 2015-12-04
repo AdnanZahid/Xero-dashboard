@@ -8,7 +8,7 @@ socket.on('returnPayments', function(paymentsInfoArray) {
 		var payment = paymentsInfoArray[i];
 	
 		var tr = document.createElement('tr');
-		appendTableElement(i, tr);
+		appendTableElement(parseInt(i) + 1, tr);
 		appendTableElement(payment['name'], tr);
 		appendTableElement(payment['bankAmount'], tr);
 		appendTableElement(payment['date'], tr);

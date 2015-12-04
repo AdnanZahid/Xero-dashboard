@@ -8,7 +8,7 @@ socket.on('returnAccounts', function(accountsInfoArray) {
 		var account = accountsInfoArray[i];
 
 		var tr = document.createElement('tr');
-		appendTableElement(i, tr);
+		appendTableElement(parseInt(i) + 1, tr);
 		appendTableElement(account['name'], tr);
 		appendTableElement(account['type'], tr);
 		appendTableElement(account['currencyCode'], tr);

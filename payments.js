@@ -28,6 +28,18 @@ module.exports = {
 			    	var status 	   	 = payment[i].Status;
 			    	var currencyCode = payment[i].Invoice.CurrencyCode;
 
+				    var dd = date.getDate();
+				    var mm = date.getMonth()+1;
+
+				    var yyyy = date.getFullYear();
+				    if (dd < 10) {
+				        dd = '0' + dd
+				    } 
+				    if(mm < 10) {
+				        mm = '0' + mm
+				    } 
+				    date = mm + '/' + dd + '/' + yyyy;
+
 					console.log('Name: ' + name + '  ---  Bank Amount: ' + bankAmount + '  ---  Date: ' + date + '  ---  Status: ' + status + '  ---  Currency Code: ' + currencyCode);
 					paymentsInfoArray.push({name: name, bankAmount: bankAmount, date: date, status: status, currencyCode: currencyCode});
 				}
