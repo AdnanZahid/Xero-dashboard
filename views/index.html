@@ -3,6 +3,7 @@
 	<head>
 		<title>Xero dashboard</title>
 
+		<link rel="icon" type="image/x-icon" href="css/images/favicon.ico" />
 		<link href='css/jquery-ui.min.css' rel='stylesheet' type='text/css' />
 		<link href='css/style.css' rel='stylesheet' type='text/css' />
 		<link href='css/pure-min.css' rel='stylesheet' type='text/css' />
@@ -11,20 +12,8 @@
 		<script type='text/javascript' src='js/jquery.min.js'></script>
 		<script type='text/javascript' src='js/jquery-ui.min.js'></script>
 		<script type='text/javascript' src='js/canvasjs.min.js'></script>
-		<script>
-			var socket = io.connect('/');
-
-			$(function() {
-			    $('#tabs').tabs();
-			});
-
-			function appendTableElement(element, tr) {
-
-		        var td = document.createElement('td');
-		        td.appendChild(document.createTextNode(element));
-		        tr.appendChild(td);
-			}
-		</script>
+		
+		<script type='text/javascript' src='js/script.js'></script>
 		<script type='text/javascript' src='js/accounts.js'></script>
 		<script type='text/javascript' src='js/payments.js'></script>
 		<script type='text/javascript' src='js/pieChart.js'></script>
@@ -36,8 +25,8 @@
 		<center><h1>Xero dashboard</h1></center>
 
 		<div style='margin: 50px;'>
-			<center>From date: <input type='text' id='fromDatePicker'></center>
-			<center>To date: <input type='text' id='toDatePicker'></center>
+			<center>Start date: <input type='text' id='fromDatePicker'></center>
+			<center>Stop date: <input type='text' id='toDatePicker'></center>
 		</div>
 		<div id='tabs'>
 		  <ul>

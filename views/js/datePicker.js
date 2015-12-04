@@ -23,8 +23,8 @@ $(function() {
 		    	}
 
 		    } else {
-		        $(this).val(inst.lastVal)
-		        alert("The selected date is invalid: ", dateText);
+		        $(this).val(inst.lastVal);
+		        alert('The selected date is invalid: ' + dateText);
 		    }
 	    }
 	});
@@ -39,8 +39,8 @@ $(function() {
 		    	}
 
 		    } else {
-		        $(this).val(inst.lastVal)
-		        alert("The selected date is invalid: ", dateText);
+		        $(this).val(inst.lastVal);
+		        alert('The selected date is invalid: ' + dateText);
 		    }
 	    }
 	});
@@ -49,8 +49,8 @@ $(function() {
 	var firstDay = new Date(y, m, 1);
 	var lastDay = new Date(y, m + 1, 0);
 
-	$('#fromDatePicker').datepicker("setDate", firstDay);
-	$('#toDatePicker'  ).datepicker("setDate", lastDay );
+	$('#fromDatePicker').datepicker('setDate', firstDay);
+	$('#toDatePicker'  ).datepicker('setDate', lastDay );
 	
 	socket.emit('setDate', {fromDate: $('#fromDatePicker').val(), toDate: $('#toDatePicker').val()});
 	socket.emit('setDate', {fromDate: $('#fromDatePicker').val(), toDate: $('#toDatePicker').val()});
