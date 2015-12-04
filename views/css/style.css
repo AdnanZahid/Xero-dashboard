@@ -23,3 +23,7 @@ input {
 input:focus, input.focus {
   border-bottom: solid 2px #969696;
 }
+
+.canvasjs-chart-credit {
+	display: none;
+}
