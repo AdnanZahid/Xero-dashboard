@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'views')));
 var server = http.createServer(app).listen(port);
 io         = io.listen(server);
 
+console.log('Server is running on localhost:' + port);
+
 function escapeRegExp(str) {
     return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
 }
