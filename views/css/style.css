@@ -9,7 +9,7 @@ h1 { color: gray; font-family: 'Trocchi', serif; font-size: 45px; font-weight: n
 }
 
 .ui-tabs .ui-tabs-nav li {
-    float: none !important;
+    float: none;
     display: inline-block;
 }
 
