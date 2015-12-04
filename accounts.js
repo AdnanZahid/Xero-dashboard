@@ -22,13 +22,13 @@ module.exports = {
 			    	var currencyCode  = account[i].CurrencyCode;
 
 					if (currencyCode === undefined) {
-
+						currencyCode = 'Does not exist';
 						console.log('Name: ' + name + '  ---  Type: ' + type + '  ---  Currency Code: ' + currencyCode + '  ---  Closing Balance: ' + '0');
-						accountsInfoArray.push({name: name, type: type, currencyCode: currencyCode, closingBalance: 0});
+						accountsInfoArray.push({name: name, type: type, currencyCode: currencyCode, closingBalance: '0.00'});
 
 					} else if (currencyCode === 'PKR') {
 
-						(function (name, type, currencyCode) {
+						(function (name, type, currencyCode, completionHandler) {
 
 							xero.call('GET', '/Reports/BankStatement?bankAccountID=' + bankAccountID + '&fromDate=' + fromDate + '&toDate=' + toDate, null, function(err, json) {
 
@@ -40,14 +40,17 @@ module.exports = {
 
 								    console.log('Name: ' + name + '  ---  Type: ' + type + '  ---  Currency Code: ' + currencyCode + '  ---  Closing Balance: ' + closingBalance);
 								    accountsInfoArray.push({name: name, type: type, currencyCode: currencyCode, closingBalance: closingBalance});
+
+								    completionHandler();
 							    }
 							});
 
-						}) (name, type, currencyCode);
+						}) (name, type, currencyCode, function() {
+						    socket.emit('returnAccounts', accountsInfoArray);
+						});
 					}
 				}
 		    }
-		    socket.emit('returnAccounts', accountsInfoArray);
 		}
 	});
   }
