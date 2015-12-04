@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Xero dashboard</title>
+
+		<link href='css/jquery-ui.min.css' rel='stylesheet' type='text/css' />
+		<link href='css/style.css' rel='stylesheet' type='text/css' />
+		<link href='css/pure-min.css' rel='stylesheet' type='text/css' />
+		<script type='text/javascript' src='/socket.io/socket.io.js'></script>
+	    <script type='text/javascript' src='js/socket.io.js'></script>
+		<script type='text/javascript' src='js/jquery.min.js'></script>
+		<script type='text/javascript' src='js/jquery-ui.min.js'></script>
+		<script type='text/javascript' src='js/canvasjs.min.js'></script>
+		<script>
+			var socket = io.connect('/');
+
+			$(function() {
+			    $('#tabs').tabs();
+			});
+
+			function appendTableElement(element, tr) {
+
+		        var td = document.createElement('td');
+		        td.appendChild(document.createTextNode(element));
+		        tr.appendChild(td);
+			}
+		</script>
+		<script type='text/javascript' src='js/accounts.js'></script>
+		<script type='text/javascript' src='js/payments.js'></script>
+		<script type='text/javascript' src='js/pieChart.js'></script>
+		<script type='text/javascript' src='js/datePicker.js'></script>
+	</head>
+
+	<body>
+
+		<center><h1>Xero dashboard</h1></center>
+
+		<div style='margin: 50px;'>
+			<center>From date: <input type='text' id='fromDatePicker'></center>
+			<center>To date: <input type='text' id='toDatePicker'></center>
+		</div>
+		<div id='tabs'>
+		  <ul>
+		    <li><a href='#tabs-1'>Accounts</a></li>
+		    <li><a href='#tabs-2'>Payments</a></li>
+		    <li><a href='#tabs-3'>Payment Pie Chart</a></li>
+		  </ul>
+		  <div id='tabs-1'>
+            <center>
+	            <table class='pure-table pure-table-bordered'>
+	            	<thead>
+		            	<tr>
+			            	<td>Serial no.</td>
+			            	<td>Name</td>
+			            	<td>Type</td>
+			            	<td>Currency Code</td>
+			            	<td>Closing Balance</td>
+		            	</tr>
+	            	</thead>
+
+	            	<tbody id='accountsTableBody'></tbody>
+	            </table>
+            </center>
+		  </div>
+		  <div id='tabs-2'>
+            <center>
+	            <table class='pure-table pure-table-bordered'>
+	            	<thead>
+		            	<tr>
+			            	<td>Serial no.</td>
+			            	<td>Name</td>
+			            	<td>Bank Amount</td>
+			            	<td>Date</td>
+			            	<td>Status</td>
+			            	<td>Currency Code</td>
+		            	</tr>
+	            	</thead>
+
+	            	<tbody id='paymentsTableBody'></tbody>
+	            </table>
+            </center>
+		  </div>
+		  <div id='tabs-3'>
+			<center><div id='chartContainer' style='height: 400px; width: 400px;'></div></center>
+		  </div>
+		</div>
+	</body>
+</html>
