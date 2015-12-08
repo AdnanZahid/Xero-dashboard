@@ -1,8 +1,8 @@
-# Xero-dashboard
+# Xero-dashboard Overview
 
 Navigate to the project directory in terminal (or command prompt) and run:
 
-### run the command to install all project dependencies..
+### Install Project Dependencies..
 
 $ npm install
 
@@ -10,13 +10,15 @@ $ npm install
 
 In the file index.js change the port to any you want (optional)
 
-var port = process.env.PORT || <type_your_port_number>;
+var port = process.env.PORT || YOUR_PORT_NUMBER;
 
-### run this command to start server.
+### Running the project.
+
+run this command to start server
 
 $ node index.js
 
-Then point your internet browser to "localhost:<your_port_number>".
+Then point your internet browser to "localhost:your_port_number".
 
 You'll see the Xero dashboard running.
 
