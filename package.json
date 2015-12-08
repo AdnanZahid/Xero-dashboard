@@ -1,0 +1,21 @@
+{
+  "name": "Xero-dashboard",
+  "version": "1.0.0",
+  "description": "Welcome to Xero-dashboard!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/narainsagar/Xero-dashboard.git"
+  },
+  "author": "Narain Sagar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narainsagar/Xero-dashboard/issues"
+  },
+  "homepage": "https://github.com/narainsagar/Xero-dashboard/",
+  "dependencies": {
+    "socket.io": "^1.2.1",
+    "express": "^4.13.3",
+    "xero": "0.0.8"
+  }
+}
